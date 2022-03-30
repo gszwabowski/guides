@@ -1,0 +1,30 @@
+#io flags:
+-in:file:fullatom
+-in:file:s <PDB FILE GOES HERE>
+-in:file:extra_res_fa <.params FILE GOES HERE>
+-cst_fa_file disulf.cst
+-cst_fa_weight 1000
+-loops:loop_file hm.loops
+-loops:frag_sizes 9 3 1
+-loops:frag_files <9mer FRAG HERE> <3mer frag here> none 
+
+-loops:remodel perturb_kic_with_fragments
+-loops:refine refine_kic_with_fragments
+
+-out:nstruct 250
+-out:pdb
+#-out:suffix
+
+#-run:test_cycles
+#-loops:fast
+
+#packing flags
+-ex1
+-ex2 
+
+-mute core.io.database
+-mute protocols.looprelax.FragmentPerturber
+-mute core.fragments.ConstantLengthFragSet
+
+#RosettaEnergyFunction2015
+-beta_nov16 true

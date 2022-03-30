@@ -1,0 +1,30 @@
+#io flags:
+-in:file:fullatom
+-in:file:s M1_LB_ligand_ECL2.pdb
+-in:file:extra_res_fa D7V.params
+-cst_fa_file disulf.cst
+-cst_fa_weight 1000
+-loops:loop_file M1.loops
+-loops:frag_sizes 9 3 1
+-loops:frag_files M1_9_frag.txt M1_3_frag.txt none 
+
+-loops:remodel perturb_kic_with_fragments
+-loops:refine refine_kic_with_fragments
+
+-out:nstruct 2
+-out:pdb
+-out:suffix _B
+
+#-run:test_cycles
+#-loops:fast
+
+#packing flags
+-ex1
+-ex2 
+
+-mute core.io.database
+-mute protocols.looprelax.FragmentPerturber
+-mute core.fragments.ConstantLengthFragSet
+
+#RosettaEnergyFunction2015
+-beta_nov16 true

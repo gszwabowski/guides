@@ -1,0 +1,14 @@
+# rosetta loops file
+# columns:
+
+# "LOOP" 
+# start_residue  
+# end_residue 
+# cutpoint (0: let LoopRebuild choose cutpoint randomly.) 
+# Skip rate (default - never skip)
+# Extend loop. Default false
+
+LOOP   0  0    0  0.0  1
+
+
+

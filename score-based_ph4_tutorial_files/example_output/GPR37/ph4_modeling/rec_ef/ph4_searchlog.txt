@@ -1,0 +1,21 @@
+Hits:
+dE(class)_3 : 495
+dE(class)_4 : 64
+dE(class)_5 : 2
+dE(class)_6 : 0
+dE(class)_7 : 0
+dE_3 : 20
+dE_4 : 3
+dE_5 : 0
+dE_6 : 0
+dE_7 : 0
+dU(class)_3 : 430
+dU(class)_4 : 58
+dU(class)_5 : 7
+dU(class)_6 : 0
+dU(class)_7 : 0
+dU_3 : 40
+dU_4 : 6
+dU_5 : 1
+dU_6 : 0
+dU_7 : 0

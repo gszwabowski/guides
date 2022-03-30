@@ -1,0 +1,2 @@
+M1_LB_ligand_ECL2_B_0001.pdb 316.91
+M1_LB_ligand_ECL2_B_0002.pdb 315.086
