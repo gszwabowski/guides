@@ -101,7 +101,7 @@ def main():
     #extract columns with text and columns with data that needs to be non-scaled when returned to the user
     receptors = ext_df.Receptor
     hits_actual = ext_df.Hits
-    score_types = ext_df['Score Type']
+    score_types = ext_df['score_type']
     subsets = ext_df.subset
     match_features = ext_df.match_features
     
@@ -116,10 +116,10 @@ def main():
     X_scaled = scale_features_single(X_clstrs)
     ext_clusters = X_scaled.copy()
     
-    #add receptors, hits_actual, score type, and subset columns back prior to 0/1/2/3 split
+    #add receptors, hits_actual, score_type, and subset columns back prior to 0/1/2/3 split
     ext_clusters['Receptor'] = receptors
     ext_clusters['hits_actual'] = hits_actual
-    ext_clusters['Score Type'] = score_types
+    ext_clusters['score_type'] = score_types
     ext_clusters['subset'] = subsets
     ext_clusters['match_features'] = match_features
     ext_clusters['clusters'] = ext_labels
@@ -133,12 +133,12 @@ def main():
     ext_0 = ext_clusters.loc[ext_clusters.clusters == 0]
     ext_0_receptors = ext_0.Receptor
     ext_0_hits_actual = ext_0.hits_actual
-    ext_0_score_types = ext_0['Score Type']
+    ext_0_score_types = ext_0['score_type']
     ext_0_subsets = ext_0.subset
     ext_0_match_features = ext_0.match_features
 
     #drop columns from the dataframe that are not used as predictors
-    X_ext_0 = ext_0.drop(columns=['Receptor', 'hits_actual', 'Score Type', 'subset', 'match_features'])
+    X_ext_0 = ext_0.drop(columns=['Receptor', 'hits_actual', 'score_type', 'subset', 'match_features'])
     
     #predict quality classes for input pharmacophore models segregated into the first cluster
     print('\nPharmacophore models predicted as quality:\n')
@@ -147,14 +147,14 @@ def main():
     #add columns that were dropped prior to classification
     X_ext_0['Receptor'] = ext_0_receptors
     X_ext_0['hits_actual'] = ext_0_hits_actual
-    X_ext_0['Score Type'] = ext_0_score_types
+    X_ext_0['score_type'] = ext_0_score_types
     X_ext_0['subset'] = ext_0_subsets
     X_ext_0['match_features'] = ext_0_match_features
     X_ext_0['quality_pred'] = y_pred
 
     #print the ph4s classified as quality and write them to .csv
     selected_ph4s = X_ext_0.loc[X_ext_0['quality_pred'] == 1]
-    selected_ph4s = selected_ph4s[['Receptor','hits_actual', 'Score Type', 'subset', 'match_features', 'quality_pred']]
+    selected_ph4s = selected_ph4s[['Receptor','hits_actual', 'score_type', 'subset', 'match_features', 'quality_pred']]
     print(selected_ph4s)
     ph4_preds = X_ext_0.loc[X_ext_0['quality_pred'] == 1]
     ph4_preds.to_csv(os.path.splitext(sys.argv[1])[0] + '_clusterI_ph4_preds.csv', index = False)
