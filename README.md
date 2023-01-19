@@ -6,6 +6,4 @@
 + MOEbatch scripting for running batch jobs using MOE 2020 onwards (*Moebatch Scripting.docx, moebatch_tutorial.zip*)
 + Root Mean Square Deviation (RMSD) calculation between ligands in MOE (*ligand_RMSD_tutorial_files/, ligand_RMSD_tutorial.docx, ligand_RMSD_tutorial_files.zip*)
 + Score-based Pharmacophore Modeling and Enrichment Class Prediction (*score-based_ph4_tutorial_files/, score-based_ph4_tutorial_files.zip, score-based_ph4_tutorial.docx*)
-
-**Guides in progress**
-+ Ligand Function Prediction using a Random Forest Model (*ligand_fxn_prediction_tutorial.docx*)
++ Ligand Function Prediction using a Random Forest Model (*ligand_fxn_prediction_tutorial_files/, ligand_fxn_prediction_tutorial_filez.zip, ligand_fxn_prediction_tutorial.docx*)
